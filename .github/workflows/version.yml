@@ -28,8 +28,8 @@ jobs:
           git config --global user.name "${{ vars.PROJECT_CI_USERNAME }}"
           git config --global user.email "${{ vars.PROJECT_CI_EMAIL }}"
 
-          # Updating the version if UPDATE_VERSION is true
-          if [ ${{ vars.PROJECT_UPDATE_VERSION }} == 1 ]; then
+          # Updating the version if PROJECT_UPDATE_VERSION is defined
+          if [ ! -z ${{ vars.PROJECT_UPDATE_VERSION }} ]; then
 
               # Updating the version
               version_row_old=$(grep "version: " $version_file)
