@@ -66,4 +66,3 @@ jobs:
         with:
           tag: ${{ env.LATEST_TAG }}
           bodyFile: CHANGELOG.md
-#
