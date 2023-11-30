@@ -52,6 +52,7 @@ jobs:
 
           TAG_NAME="v$(grep "version: " $version_file)"
           echo "LATEST_TAG=$TAG_NAME" >> $GITHUB_ENV
+          echo $TAG_NAME
 
           # Tagging and pushing the change
           git tag $TAG_NAME
