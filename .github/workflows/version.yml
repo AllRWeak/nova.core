@@ -50,7 +50,7 @@ jobs:
 
           fi
 
-          TAG_NAME="v$(grep "version: " $version_file)"
+          TAG_NAME="$(grep "version: " $version_file)"
           echo "LATEST_TAG=$TAG_NAME" >> $GITHUB_ENV
           echo $TAG_NAME
 
@@ -63,5 +63,5 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          tag: ${{ env.LATEST_TAG }}
+          tag: "v${{ env.LATEST_TAG }}""
           bodyFile: CHANGELOG.md
