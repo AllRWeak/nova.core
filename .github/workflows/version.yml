@@ -52,7 +52,6 @@ jobs:
 
           TAG_NAME="v$(grep "version: " $version_file | cut -d ' ' -f 2)"
           echo "LATEST_TAG=$TAG_NAME" >> $GITHUB_ENV
-          echo $TAG_NAME
 
           # Tagging and pushing the change
           git tag $TAG_NAME
@@ -65,4 +64,3 @@ jobs:
         with:
           tag: ${{ env.LATEST_TAG }}
           bodyFile: CHANGELOG.md
-#
