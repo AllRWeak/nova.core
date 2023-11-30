@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Setting variables
 version_file="${{ vars.PROJECT_VERSION_FILE }}"
 
